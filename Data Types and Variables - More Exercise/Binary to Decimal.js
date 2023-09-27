@@ -10,7 +10,7 @@ function solve(binary) {
             // number − It is a number for which users want to calculate the power.In our case, it is fixed which is 2.
 
             // power − It is the power of the first parameter.We will pass different values using for loop to get different powers of 2.
-            //whenever we have a '1' we increase decimal += 2**i
+            //whenever we have a '1' we increase decimal += 2**binary[i]
         }
     }
     console.log(decimal)
