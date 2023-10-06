@@ -19,6 +19,7 @@ function solve(array) {
         commands.push(array[i]);
     }
 
+    let index = 0;
     ////forloop defining the steps for the bugs
     for (let i = 0; i < commands.length; i++) {
         let steps = commands[i].split(" ");
@@ -27,57 +28,18 @@ function solve(array) {
         let direction = steps[1]
         let distance = Number(steps[2]);
 
-        ///////////////////////////////////////////////////////////////////////////////////////////////
-        //if distance !=0, so we remove current bug from current position, else nothing
-        if (distance > 0 && field[bug] > 0 && bug >= 0 && bug <= field.length) {
-            field[bug] = 0;
-            //if right, add 1 to field[bug+distance]
-            if (direction == "right") {
-                field[bug + distance]++
-            } else if (direction == "left") {
-                //if left, add 1 to field[bug-distance]
-                field[bug - distance]++
-            }
-        } else if (distance < 0 && field[bug] > 0) {
-            field[bug] = 0;
-            if (direction == "left") {
-                field[bug - distance]++
-            } else if (direction == "right") {
-                //if left, add 1 to field[bug-distance]
-                field[bug + distance]--
-            }
-        }
-
     }
-    //if element is >1, make it 1
-    for (let i = 0; i < field.length; i++) {
-        if (field[i] > 1) {
-            field[i] = 1;
-        }
-    }
-    //remove any NaN elements from field array
-    let buff = "";
-
-    for (let i = 0; i < field.length; i++) {
-        if (field[i] == 0) {
-            buff += field[i] + " ";
-        } else if (field[i] == 1) {
-            buff += field[i] + " ";
-        }
-    }
-    console.log(buff)
 }
 
-
-solve([3, '0 1',
-    '0 right 1',
+solve([7, '0 2 4',
+    '0 right 2',
     '2 right 1']);
 
-solve([3, '0 1 2',
-    '0 right 1',
-    '1 right 1',
-    '2 right 1']);
+// solve([3, '0 1 2',
+//     '0 right 1',
+//     '1 right 1',
+//     '2 right 1']);
 
-solve([5, '3',
-    '3 left 2',
-    '1 left -2']);
+// solve([5, '3',
+//     '3 left 2',
+//     '1 left -2']);
