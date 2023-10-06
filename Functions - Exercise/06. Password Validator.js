@@ -32,6 +32,6 @@ function solve(password) {
 };
 
 
-// solve('logIn');
-// solve('MyPass123');
+solve('logIn');
+solve('MyPass123');
 solve('Pa$s$s');
