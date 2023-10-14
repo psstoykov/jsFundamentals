@@ -15,19 +15,6 @@ function solve(num1, num2) {
 
     let digit = 1;
 
-    resultArray.splice((0, 0), 0, 1);
-    resultArray.splice((0, 1), 0, 2);
-    resultArray.splice((0, 2), 0, 3);
-    resultArray.splice((1, 2), 0, 4);
-    resultArray.splice((2, 2), 0, 5);
-    resultArray.splice((2, 1), 0, 6);
-    resultArray.splice((2, 0), 0, 7);
-    resultArray.splice((1, 0), 0, 8);
-    resultArray.splice((1, 1), 0, 9);
-
-    let buff = '';
-
-
 
     console.log(resultArray)
 
