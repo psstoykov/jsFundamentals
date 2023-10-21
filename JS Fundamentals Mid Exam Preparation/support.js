@@ -1,14 +1,7 @@
+let expected = 100;
+let total = 50;
 
-let shopping = [1, 2, 3, 4, 5, 6, 7];
+let percent = (expected - total) / ((expected + total) / 2);
+percent *= 100
 
-let num = 5;
-console.log(shopping)
-shopping.filter((x) => x != num)
-
-console.log(shopping)
-
-
-
-
-
-
+console.log(percent)
