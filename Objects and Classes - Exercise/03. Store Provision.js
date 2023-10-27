@@ -5,7 +5,7 @@ function solve(inventory, ordered) {
     for (let i = 0; i < inventory.length; i += 2) {
         let product = inventory[i];
         let quantiy = Number(inventory[i + 1]);
-        stock[`${product}`] = quantiy;
+        stock[product] = quantiy;
     }
     for (let i = 0; i < ordered.length; i += 2) {
         let newOrder = ordered[i];
