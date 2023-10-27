@@ -1,6 +1,32 @@
-let catalogue = [{ name: "Godfather" }, { name: "Fast and Furious" }]
+let heroes = [];
 
-for (let i = 0; i < catalogue.length; i++) {
-    let film = Object.values(catalogue[i]);
-    console.log(film)
-}
+heroes.push({
+    name: 'Petar',
+    level: 3,
+})
+heroes.push({
+    name: 'Petar',
+    level: 5,
+})
+heroes.push({
+    name: 'Petar',
+    level: 1,
+})
+heroes.push({
+    name: 'Petar',
+    level: 7,
+})
+heroes.push({
+    name: 'Petar',
+    level: 2,
+})
+heroes.push({
+    name: 'Petar',
+    level: 9,
+})
+
+console.log(heroes)
+
+let sortedHeroes = heroes.sort((a, b) => a.level - b.level);
+
+console.log(sortedHeroes)
