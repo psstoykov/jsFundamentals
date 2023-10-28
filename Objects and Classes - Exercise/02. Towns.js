@@ -1,18 +1,10 @@
 function solve(input) {
 
-    // class Town {
-    //     constructor(town, latitude, longitude) {
-    //         this.town = town;
-    //         this.latitude = latitude;
-    //         this.longitude = longitude;
-    //     }
-    // }
-
     for (let i = 0; i < input.length; i++) {
-        let townArray = input[i].split(" | ");
-        let name = townArray.shift();
-        let latitude = Number(townArray.shift()).toFixed(2);
-        let longitude = Number(townArray.shift()).toFixed(2);
+        let [name, latitude, longitude] = input[i].split(" | ");
+
+        latitude = Number(latitude).toFixed(2);
+        longitude = Number(longitude).toFixed(2);
 
         let townObject = {};
         townObject.town = name;

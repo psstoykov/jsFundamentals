@@ -1,7 +1,7 @@
 function solve(input) {
 
-
     let catalogue = [];
+
     for (let i = 0; i < input.length; i++) {
         let tokens = input[i].split(" ");
         if (tokens.includes("addMovie")) {
