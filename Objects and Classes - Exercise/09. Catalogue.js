@@ -8,12 +8,11 @@ function solve(input) {
         let productName = tokens[0];
         let productPrice = Number(tokens[1]);
 
-
         let obj = {
             name: productName,
             price: productPrice
         }
-        //push the produt objects into catalogue array
+        //push the product objects into catalogue array
         objectArray.push(obj);
     }
     //sort the object array by product name
