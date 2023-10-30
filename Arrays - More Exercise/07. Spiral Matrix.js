@@ -1,30 +1,66 @@
 function solve(num1, num2) {
 
-    let sum = num1 * num2;
-    let array =
-        [[1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]]; //hard coded
-    let resultArray = []
+    //the desired number, which we will decrease
+    let num = num1 * num2;
+    let counter = 1;
 
-    //letters are the 4 corner indexes
-    let a = 0;
-    let b = num1;
-    let c = num1;
-    let d = 0;
+    //create the 2 dimensional array
+    let spiral = [];
+    for (let i = 0; i < num1; i++) {
+        spiral[i] = [];
+    }
 
-    let digit = 1;
+    let x = 0;
+    let y = 0;
+    let highIndex = num1;
+    let lowIndex = 0;
+
+    while (counter <= num) {
+
+        for (y; y < highIndex; y++) {
+            spiral[x][y] = counter;
+            counter++;
+
+        }
+        y--;
+        x++;
+        for (x; x < highIndex; x++) {
+            spiral[x][y] = counter;
+            counter++
+        }
+        x--;
+        y--;
+        for (y; y >= lowIndex; y--) {
+            spiral[x][y] = counter;
+            counter++;
+        }
+        y++;
+        x--;
+        lowIndex++;
+        highIndex--;
+        for (x; x >= lowIndex; x--) {
+            spiral[x][y] = counter;
+            counter++;
+        }
+        x++
+        y++
+
+    }
+
+    let matrix = [];
+    for (let el of spiral) {
+        let buff = "";
+        for (let num of el) {
+            buff += `${num} `;
 
 
-    console.log(resultArray)
+        }
+        console.log(buff)
+    }
 
 }
 
-solve(3, 3);
-// solve(5, 5);
+// solve(3, 3);
+solve(7, 7)
 
 
-
-// [[1, 2, 3],
-// [4, 5, 6],
-// [7, 8, 9]]
