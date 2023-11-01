@@ -61,6 +61,6 @@ function solve(num1, num2) {
 }
 
 // solve(3, 3);
-solve(7, 7)
+solve(5, 5)
 
 
