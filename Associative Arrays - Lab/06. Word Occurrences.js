@@ -1,15 +1,22 @@
 function solve(input) {
 
-    let obj = {};
+    let wordsMap = new Map();
 
     for (let element of input) {
-        if (obj.hasOwnProperty(element)) {
-            obj[element] += 1;
+        if (wordsMap.has(element)) {
+            let counter = wordsMap.get(element);
+            wordsMap.set(element, counter + 1)
+
         } else {
-            obj[element] = 1;
+            wordsMap.set(element, 1);
         }
     }
-    console.log(obj)
+
+    let sorted = Array.from(wordsMap).sort((a, b) => b[1] - a[1]);
+
+    for (let [word, count] of sorted) {
+        console.log(`${word} -> ${count} times`)
+    }
 };
 
 solve(["Here", "is", "the", "first", "sentence",
