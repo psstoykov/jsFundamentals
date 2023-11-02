@@ -53,7 +53,7 @@ function solve(text) {
         console.log(`${word} -> ${count} times`)
     }
 }
-solve(["heell ?"])
+solve(["Wha the heck ssssss sssss ssss sssss ssssss"])
 
 // solve(["dog", "bye", "city", "dog", "dad",
 //     "boys", "ginger"]);
