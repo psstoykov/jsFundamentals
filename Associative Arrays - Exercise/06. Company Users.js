@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-function solve() {
-
-
-};
-
-solve();
-=======
 function solve(input) {
 
 
@@ -57,4 +49,3 @@ solve([
 //     'Lenovo ->  XX23456',
 //     'SoftUni -> AA12345',
 //     'Movement -> DD11111']);
->>>>>>> f2b36c9fbab3762270688af7a1e61e632d066e7c
