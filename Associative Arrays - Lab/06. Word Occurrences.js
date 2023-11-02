@@ -1,8 +1,43 @@
-function solve(input) {
+function solve(text) {
+
+    let splitted = text[0].split(" ");
+
+    for (let i = 0; i < splitted.length; i++) {
+        let word = splitted[i];
+        let wordArr = word.split("")
+
+        for (let j = 0; j < wordArr.length; j++) {
+            let char = wordArr[j]
+
+            if (char == "." ||
+                char == "," ||
+                char == "!" ||
+                char == "?" ||
+                char == "/" ||
+                char == "(" ||
+                char == ")" ||
+                char == "[" ||
+                char == "]" ||
+                char == "{" ||
+                char == "}" ||
+                char == " " ||
+                char == ":" ||
+                char == ";" ||
+                char == "-" ||
+                char == "=" ||
+                char == "+") {
+                let index = wordArr.indexOf(char)
+
+                wordArr.splice(index, 1);
+                word = wordArr.join("")
+                splitted.splice(i, 1, word)
+            }
+        }
+    }
 
     let wordsMap = new Map();
 
-    for (let element of input) {
+    for (let element of splitted) {
         if (wordsMap.has(element)) {
             let counter = wordsMap.get(element);
             wordsMap.set(element, counter + 1)
@@ -17,11 +52,8 @@ function solve(input) {
     for (let [word, count] of sorted) {
         console.log(`${word} -> ${count} times`)
     }
-};
-
-solve(["Here", "is", "the", "first", "sentence",
-    "Here", "is", "another", "sentence", "And",
-    "finally", "the", "third", "sentence"]);
+}
+solve(["heell ?"])
 
 // solve(["dog", "bye", "city", "dog", "dad",
 //     "boys", "ginger"]);
