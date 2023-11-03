@@ -2,7 +2,6 @@ function solve(input) {
 
     let tokensArr = input.shift().split(" ");
 
-
     let tracker = {};
 
     for (let word of tokensArr) {

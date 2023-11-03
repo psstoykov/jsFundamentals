@@ -2,7 +2,7 @@ function solve(input) {
 
     let inventory = {};
 
-    for (let i = 0; i < input.length; i = i + 2) {
+    for (let i = 0; i < input.length; i += 2) {
         let resource = input[i];
         let quantity = Number(input[i + 1]);
 

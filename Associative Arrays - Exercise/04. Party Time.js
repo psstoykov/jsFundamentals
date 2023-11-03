@@ -4,65 +4,83 @@ function solve(input) {
     let guestList = input.slice(0, partyIndex)
     let arrivals = input.slice(partyIndex + 1)
 
-    let counter = 0; //people arriving at the party
-    let guestObj = {};
-
-    for (let guest of guestList) {
-        guestObj[guest] = 1
-    }
     for (let guest of arrivals) {
-
-        if (guestObj.hasOwnProperty(guest)) {
-            delete guestObj[guest];
+        if (guestList.includes(guest)) {
+            let index = guestList.indexOf(guest);
+            guestList.splice(index, 1);
         }
     }
 
-    counter = Object.entries(guestObj).length;
+    let counter = guestList.length;
     console.log(counter)
 
-    for (let entry of Object.entries(guestObj)) {
 
-        console.log(entry[0])
+    let count = 0;
+    for (let i = 0; i < guestList.length; i++) {
+        if (count == guestList.length) {
+            break;
+        }
+        count++;
+        let char = guestList[i][0];
+        if (char != '0' && char != '1' && char != '2' && char != '3' && char != '4' && char != '5' && char != '6' && char != '7' && char != '8' && char != '9') {
+            let movedWord = guestList.splice(i, 1)
+            i--;
+            guestList.push(movedWord[0])
+        }
     }
+
+    for (let guest of guestList) {
+        console.log(guest)
+    }
+
+    // let resultObj = {};
+
+    // for (let guest of guestList) {
+    //     resultObj[guest] = 1;
+    // }
+
+    // for (let key of Object.keys(resultObj)) {
+    //     console.log(key)
+    // }
 };
 
 
-// solve(['7IK9Yo0h',
-//     '9NoBUajQ',
-//     'Ce8vwPmE',
-//     'SVQXQCbc',
-//     'tSzE5t0p',
-//     'PARTY',
-//     '9NoBUajQ',
-//     'Ce8vwPmE',
-//     'SVQXQCbc']);
-
-solve(['m8rfQBvl',
-    'fc1oZCE0',
-    'UgffRkOn',
-    '7ugX7bm0',
-    '9CQBGUeJ',
-    '2FQZT3uC',
-    'dziNz78I',
-    'mdSGyQCJ',
-    'LjcVpmDL',
-    'fPXNHpm1',
-    'HTTbwRmM',
-    'B5yTkMQi',
-    '8N0FThqG',
-    'xys2FYzn',
-    'MDzcM9ZK',
+solve(['7IK9Yo0h',
+    '9NoBUajQ',
+    'Ce8vwPmE',
+    'SVQXQCbc',
+    'tSzE5t0p',
     'PARTY',
-    '2FQZT3uC',
-    'dziNz78I',
-    'mdSGyQCJ',
-    'LjcVpmDL',
-    'fPXNHpm1',
-    'HTTbwRmM',
-    'B5yTkMQi',
-    '8N0FThqG',
-    'm8rfQBvl',
-    'fc1oZCE0',
-    'UgffRkOn',
-    '7ugX7bm0',
-    '9CQBGUeJ']);
+    '9NoBUajQ',
+    'Ce8vwPmE',
+    'SVQXQCbc']);
+
+// solve(['m8rfQBvl',
+//     'fc1oZCE0',
+//     'UgffRkOn',
+//     '7ugX7bm0',
+//     '9CQBGUeJ',
+//     '2FQZT3uC',
+//     'dziNz78I',
+//     'mdSGyQCJ',
+//     'LjcVpmDL',
+//     'fPXNHpm1',
+//     'HTTbwRmM',
+//     'B5yTkMQi',
+//     '8N0FThqG',
+//     'xys2FYzn',
+//     'MDzcM9ZK',
+//     'PARTY',
+//     '2FQZT3uC',
+//     'dziNz78I',
+//     'mdSGyQCJ',
+//     'LjcVpmDL',
+//     'fPXNHpm1',
+//     'HTTbwRmM',
+//     'B5yTkMQi',
+//     '8N0FThqG',
+//     'm8rfQBvl',
+//     'fc1oZCE0',
+//     'UgffRkOn',
+//     '7ugX7bm0',
+//     '9CQBGUeJ']);
