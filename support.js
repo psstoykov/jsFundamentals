@@ -1,10 +1,8 @@
-let array = []
+let arr = ["Bulgaria", 5, "Albania", "Romania"];
 
-let company = {
-    '5': 5,
-    'name': 'Petar'
-}
 
-array.push(company);
+console.log(arr)
 
-console.log(array[0])
+arr.sort((a, b) => a.localeCompare(b))
+
+console.log(arr)
