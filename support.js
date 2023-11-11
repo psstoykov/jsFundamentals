@@ -1,8 +1,6 @@
-let arr = ["Bulgaria", 5, "Albania", "Romania"];
+let text = "My name is Petar."
 
+let array = text.split(" ")
+let word = "pe";
 
-console.log(arr)
-
-arr.sort((a, b) => a.localeCompare(b))
-
-console.log(arr)
+console.log(arra.includes(word))
