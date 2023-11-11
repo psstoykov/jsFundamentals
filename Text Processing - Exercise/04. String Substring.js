@@ -1,9 +1,10 @@
 function solve(word, text) {
 
-    let capText = text.split("").map(a => a.toUpperCase()).join("");
+    text = text.toLowerCase();
 
-    let cap = word.toUpperCase();
-    if (capText.includes(cap)) {
+    let textArray = text.split(" ");
+
+    if (textArray.includes(word)) {
         console.log(word);
         return;
     } else {

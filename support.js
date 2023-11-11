@@ -1,6 +1,6 @@
-let text = "My name is Petar."
+let word = ",_________."
 
-let array = text.split(" ")
-let word = "pe";
+let newWord = word.slice(0, -1);
+newWord = newWord.slice(1)
 
-console.log(arra.includes(word))
+console.log(newWord)
