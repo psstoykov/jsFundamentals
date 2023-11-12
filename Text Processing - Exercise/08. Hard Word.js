@@ -1,7 +1,7 @@
 function solve(input) {
 
     let text = input.shift();
-    let wordsArray = input[0];
+    let wordsArray = input.shift();
     text = text.split(" ");
 
     let specialChar = "_";
