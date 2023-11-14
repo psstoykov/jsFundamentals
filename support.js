@@ -1,6 +1,8 @@
-let word = ",_________."
+let skills1 = [["shooting", 400], ["football", 200]];
 
-let newWord = word.slice(0, -1);
-newWord = newWord.slice(1)
+let skills2 = [["football", 100], ["cooking", 300]];
 
-console.log(newWord)
+
+for (let [skill, points] of skills1) {
+    console.log(points)
+}
