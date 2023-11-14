@@ -16,16 +16,31 @@ function solve(input) {
                 let [gladiator1, gladiator2] = figth;
                 //check if both gladiators excist
                 if (arena.hasOwnProperty(gladiator1) && arena.hasOwnProperty(gladiator2)) {
-                    //create 2 arrays with each gladiators skills and points
+                    //create 2 arrays for each gladiators skills and points
                     let skills1 = Object.keys(arena[gladiator1]);
-                    let skills2 = Object.keys(arena[gladiator2]);
                     let points1 = Object.values(arena[gladiator1]);
+                    let skills2 = Object.keys(arena[gladiator2]);
                     let points2 = Object.values(arena[gladiator2]);
-                    console.log(points1, points2)
+
                     //find out if the gladiators have skill in common to figth
-
-
-                    //if common skill/skills excist, remove gladiator with less total points
+                    for (let skill of skills1) {
+                        if (skills2.includes(skill)) {
+                            let total1 = 0;
+                            let total2 = 0;
+                            for (let points of points1) {
+                                total1 += points
+                            }
+                            for (let points of points2) {
+                                total2 += points
+                            }
+                            //if common skill/skills excist, remove gladiator with less total points
+                            if (total1 > total2) {
+                                delete arena[gladiator2];
+                            } else if (total2 > total1) {
+                                delete arena[gladiator1];
+                            }
+                        }
+                    }
 
                 }
                 continue;
@@ -58,7 +73,9 @@ function solve(input) {
         }
 
     };
-    // console.log(arena)
+    //sorting the object
+
+    console.log(arena)
 };
 
 
