@@ -41,7 +41,6 @@ function solve(input) {
                             }
                         }
                     }
-
                 }
                 continue;
             }
@@ -56,7 +55,6 @@ function solve(input) {
             arena[name][skill] = points;
             //if name already excist
         } else {
-
             //if skill doesn't excist
             if (!arena[name].hasOwnProperty(skill)) {
                 arena[name][skill] = points;
@@ -67,15 +65,46 @@ function solve(input) {
                     arena[name][skill] = points;
 
                 }
-
             }
-
         }
-
     };
     //sorting the object
+    let arenaArray = [];
 
-    console.log(arena)
+    let i = 0;
+    for (let gladiator of Object.entries(arena)) {
+        //calculate total points of each gladiator
+        let gladiatorPoints = 0;
+
+        let pointsArray = Object.values(gladiator[1]);
+        for (let value of pointsArray) {
+            gladiatorPoints += value;
+        }
+        let gladiatorName = gladiator[0];
+        let skillsArray = gladiator[1]
+        arenaArray[i] = [];
+        arenaArray[i].push(gladiatorName);
+        arenaArray[i].push(gladiatorPoints);
+        arenaArray[i].push(skillsArray);
+
+        i++;
+    }
+    let sortedArray = arenaArray.sort((a, b) => ((a[1] - b[1] != 0) ? b[1] - a[1] : a[0].localeCompare(b[0])));
+
+
+    //sorting by skill each gladiator
+    for (let gladiator of sortedArray) {
+
+        let skillsArray = Object.entries(gladiator[2]);
+        let name = gladiator[0];
+        let points = gladiator[1];
+        skillsArray = skillsArray.sort((a, b) => ((a[1] - b[1] != 0) ? b[1] - a[1] : a[0].localeCompare(b[0])));
+
+        console.log(`${name}: ${points} skill`);
+        for (let [skill, points] of skillsArray) {
+            console.log(`- ${skill} <!> ${points}`)
+        }
+    }
 };
 
 
