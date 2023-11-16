@@ -1,8 +1,11 @@
-let skills1 = [["shooting", 400], ["football", 200]];
+function solve(input) {
 
-let skills2 = [["football", 100], ["cooking", 300]];
+    let letterPattern = /[A-Za-z]/g;
+    let name = input.match(letterPattern).join("");
 
+    console.log(name)
 
-for (let [skill, points] of skills1) {
-    console.log(points)
 }
+
+
+solve('Mi*&^%$ch123o!#$%#nne787) ');

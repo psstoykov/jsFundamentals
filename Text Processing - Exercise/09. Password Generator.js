@@ -20,6 +20,7 @@ function solve(input) {
             }
         }
     }
+
     // console.log(`Your generated password is ${password.reverse().join("")}`)
     console.log(password.reverse().join(""))
 };

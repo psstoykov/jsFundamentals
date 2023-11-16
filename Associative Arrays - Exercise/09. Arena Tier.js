@@ -82,6 +82,7 @@ function solve(input) {
         }
         let gladiatorName = gladiator[0];
         let skillsArray = gladiator[1]
+        // console.log(skillsArray)
         arenaArray[i] = [];
         arenaArray[i].push(gladiatorName);
         arenaArray[i].push(gladiatorPoints);
@@ -90,7 +91,6 @@ function solve(input) {
         i++;
     }
     let sortedArray = arenaArray.sort((a, b) => ((a[1] - b[1] != 0) ? b[1] - a[1] : a[0].localeCompare(b[0])));
-
 
     //sorting by skill each gladiator
     for (let gladiator of sortedArray) {
@@ -102,7 +102,7 @@ function solve(input) {
 
         console.log(`${name}: ${points} skill`);
         for (let [skill, points] of skillsArray) {
-            console.log(`- ${skill} <!> ${points}`)
+            console.log(`- ${skill} <!> ${points}`);
         }
     }
 };
