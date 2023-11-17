@@ -19,15 +19,15 @@ function solve(input) {
     for (let command of input) {
         //find current name from command
         let name = command.match(letterPattern).join("");
+        //if participant isn't on the list
+        if (!participantsArray.includes(name)) {
+            continue;
+        }
         //find the sum of points
         let pointsArray = command.match(pointsPattern).map(a => a = Number(a));
         let sum = 0;
         for (let point of pointsArray) {
             sum += point
-        }
-        //if participant isn't on the list
-        if (!participantsArray.includes(name)) {
-            continue;
         }
         //if participant is on the list
         if (!raceObj.hasOwnProperty(name)) {
