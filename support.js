@@ -1,11 +1,11 @@
-function solve(input) {
 
-    let letterPattern = /[A-Za-z]/g;
-    let name = input.match(letterPattern).join("");
+let planetPattern = /@(?<name>[A-Za-z]+)(?<filling>.+)?:(?<population>[\d]+)!(?<attackType>[AD])!->(?<soldierCount>[\d]+)/g;
 
-    console.log(name)
+// let planetString = "PQ@Alderaa1:30000!A!->20000";
+let planetString = "@Cantonica:3000!D!->4000NM"
 
-}
+let match = planetPattern.exec(planetString);
+
+console.log(match)
 
 
-solve('Mi*&^%$ch123o!#$%#nne787) ');
