@@ -1,6 +1,6 @@
 function solve(input) {
 
-    let pattern = />>(?<product>[A-Z][A-Za-z]+)<<(?<price>[0-9]+[.]?\d+)!(?<quantity>\d+)/g;
+    let pattern = />>(?<product>[A-Z][A-Za-z]+)<<(?<price>[0-9]+\.?\d+)!(?<quantity>\d+)/g;
     let totalSpent = 0;
     let shoppingString = input.join(" ");
 

@@ -1,6 +1,6 @@
 function solve(input) {
 
-    let orderPattern = /%(?<name>[A-Z][a-z]+)%[^|$%.]*?<(?<product>[\w]+)>[^|$%.]*?\|(?<counter>[\d]+)\|[^|$%.]*?(?<price>[\d]+[.]?[\d]+)[$]/g;
+    let orderPattern = /%(?<name>[A-Z][a-z]+)%[^|$%.]*?<(?<product>[\w]+)>[^|$%.]*?\|(?<counter>[\d]+)\|[^|$%.]*?(?<price>[\d]+[.]?[\d]*)[$]/g;
 
     let inputString = input.join("");
     let totalIncome = 0;

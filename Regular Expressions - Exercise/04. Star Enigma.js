@@ -5,7 +5,7 @@ function solve(input) {
     let destroyedPlanets = [];
 
     let keyPattern = /[starSTAR]/g;
-    let planetPattern = /@(?<name>[A-Za-z]+)(?<filling>[^@\-!:>])*?:(?<population>[\d]+)\k<filling>*?!(?<attackType>[AD])!\k<filling>*?-.(?<soldierCount>[\d]+)/g;
+    let planetPattern = /@(?<name>[A-Za-z]+)[^@\-!:>]*:(?<population>[\d]+)[^@\-!:>]*!(?<attackType>[AD])![^@\-!:>]*->(?<soldierCount>[\d]+)/g;
 
     for (let i = 0; i < planetCount; i++) {
 
@@ -13,10 +13,13 @@ function solve(input) {
 
         //find the current planet's key value
         let matchedLetters = command.match(keyPattern);
+        let key;
+        //check if there are keys or not
         if (matchedLetters == null) {
-            continue;
+            key = 0;
+        } else {
+            key = matchedLetters.length;
         }
-        let key = matchedLetters.length;
 
         //decrypt the current planet with it's key
         let planetArray = command.split("");
