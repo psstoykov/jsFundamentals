@@ -1,18 +1,23 @@
 function solve(input) {
 
-
-    let namePattern = /[^, ]+/g;
-    let damagePattern = /[+-]*[\d]+[.]?[\d]*[+-]*/g;
-    let healthPattern = /[^0-9*+-?. ]*/g;
+    let damagePattern = /[+\-]?[\d]+[.]?[\d]*/g;
+    let healthPattern = /[^0-9*\/+\-?.]+/g;
     let operatorsPattern = /[*\/]/g;
-    let demons = {};
     let finalArray = [];
 
-    namesArray = input.match(namePattern);
+    input = input.split(",");
 
-    for (let demon of namesArray) {
+    input = input.map(a => a.trim());
+    // console.log(input)
 
+    for (let demon of input) {
+        let demons = {};
+        let namePattern = /^[^\s]+$/g;
+        if (!namePattern.test(demon)) {
+            continue;
+        }
 
+        demon = demon.replace(/[ ]/g, "");
         demons['name'] = demon;
 
         let demonHealth = 0;
@@ -52,16 +57,13 @@ function solve(input) {
             }
         }
         demons["damage"] = demonDamage;
-        finalArray.push(Object.entries(demons));
+        finalArray.push(demons);
     }
-    finalArray = finalArray.sort((a, b) => b[1][1] - a[1][1]);
-
-    for (let [name, health, damage] of finalArray) {
-        console.log(`${name[1]} - ${health[1]} health, ${damage[1].toFixed(2)} damage`)
+    finalArray = finalArray.sort((a, b) => a.name.localeCompare(b.name));
+    // console.log(finalArray)
+    for (let { name, health, damage } of finalArray) {
+        console.log(`${name} - ${health} health, ${damage.toFixed(2)} damage`)
     }
-
 };
 
-solve("M3ph-0.5s-0.5t0.0**");
-
-solve("M3ph1st0**, Azazel");
+solve(",M3ph1st0**,, Azazel,, ,");

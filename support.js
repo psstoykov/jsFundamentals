@@ -1,7 +1,5 @@
-let numStr = "-0.4";
+let name = "Me     p  histo"
 
-let num = Number(numStr);
+name = name.replace(/[ ]/g, "");
 
-console.log(num)
-
-
+console.log(name)
