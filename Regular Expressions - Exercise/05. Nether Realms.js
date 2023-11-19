@@ -1,6 +1,6 @@
 function solve(input) {
 
-    let damagePattern = /[+\-]?[\d]+[.]?[\d]*/g;
+    let damagePattern = /[+\-]*[\d]+[.]?[\d]*/g;
     let healthPattern = /[^0-9*\/+\-?.]+/g;
     let operatorsPattern = /[*\/]/g;
     let finalArray = [];
