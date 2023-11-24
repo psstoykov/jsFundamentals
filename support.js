@@ -1,5 +1,9 @@
-let name = "Me     p  histo"
+let plants = {
 
-name = name.replace(/[ ]/g, "");
+    name: {
+        rarity: 4,
+        rating: 7
+    },
+}
 
-console.log(name)
+console.log(plants['name']['rarity'])
