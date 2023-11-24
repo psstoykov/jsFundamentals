@@ -1,9 +1,7 @@
-let plants = {
+let pattern = /(\@\#+)[A-Z][A-Za-z\d]{4,}[A-Z]\1/g;
 
-    name: {
-        rarity: 4,
-        rating: 7
-    },
-}
+let string = "@###Brea0D@###";
 
-console.log(plants['name']['rarity'])
+let match = pattern.exec(string);
+
+console.log(match)
