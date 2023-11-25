@@ -1,7 +1,3 @@
-let pattern = /(\@\#+)[A-Z][A-Za-z\d]{4,}[A-Z]\1/g;
+let num = 2 * 0;
 
-let string = "@###Brea0D@###";
-
-let match = pattern.exec(string);
-
-console.log(match)
+console.log(num)
