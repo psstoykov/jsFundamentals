@@ -1,3 +1,2 @@
-let num = 2 * 0;
-
-console.log(num)
+let name = "George";
+console.log(name.charAt(2))
