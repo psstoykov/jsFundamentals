@@ -1,60 +1,27 @@
 function solve(array) {
-    let size = array.length;
-    let newArray = [];
 
-    //create a nested array(matrix);
-    for (let row of array) {
-        newArray.push(row.split(" "))
+    let diagonalOne = 0;
+    let diagonalTwo = 0;
+    for (let i = 0; i < array.length; i++) {
+        array[i] = array[i].split(" ").map(Number);
+        diagonalOne += array[i][i];
+        diagonalTwo += array[i][array.length - 1 - i]
     }
-    array = newArray;
-
-    //function for 1st diagonal
-    function diagonal1(array, size) {
-        let col = size - 1;
-        let sum = 0;
-
-        for (let row = 0; row < size; row++) {
-            let num = Number(array[col][row])
-            sum += num
-            col--;
-        }
-        return sum;
-    }
-    //function for 2nd diagonal
-    function diagonal2(array, size) {
-        let row = 0;
-        let sum = 0;
-
-        for (let col = 0; col < size; col++) {
-            let num = Number(array[col][row])
-            sum += num
-            row++;
-        }
-        return sum;
-    }
-
-    //diagonals calculated
-    let diagonalOne = diagonal1(array, size);
-    let diagonalTwo = diagonal2(array, size);
-
-    //if diagonals are equal
     if (diagonalOne == diagonalTwo) {
+        // array = array.join(",").split(",").map(Number);
 
-
-        for (let row = 0; row < size; row++) {
-            let indexUp = row;
-            let indexDown = size - 1;
-            for (let col = 0; col < size; col++) {
-
-                let diagonalUp = array[indexUp][indexUp];
-                let diagonalDown = array[indexDown][indexUp];
-                indexDown--;
-
-                console.log(diagonalDown)
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (i == j || (i + j == array.length - 1)) {
+                    continue;
+                }
+                array[i][j] = diagonalOne;
             }
-            // console.log(array[row].join(" "))
-
         }
+    }
+
+    for (let i = 0; i < array.length; i++) {
+        console.log(array[i].join(" "))
     }
 };
 
@@ -63,6 +30,11 @@ solve(['5 3 12 3 1',
     '101 12 3 21 10',
     '1 4 5 2 2',
     '5 22 33 11 1']);
-// solve(['1 1 1',
-//     '1 1 1',
-//     '1 1 0']);
+
+// solve(['1 1 1 1',
+//     '1 1 1 1',
+//     '1 1 1 1',
+//     '1 1 1 1'])
+
+
+// 0   1   1   1   0       1   0   1   0   1       1   1   0   1   1       1   0   1   0   1       0   1   1   1   0

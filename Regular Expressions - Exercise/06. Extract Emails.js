@@ -1,6 +1,7 @@
 function solve() {
 
 
+
 };
 
 solve("Please contact us at: support@github.com.");
