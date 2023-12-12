@@ -1,5 +1,2 @@
-let name = "Me     p  histo"
-
-name = name.replace(/[ ]/g, "");
-
-console.log(name)
+let name = "George";
+console.log(name.charAt(2))
