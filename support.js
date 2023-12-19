@@ -1,2 +1,3 @@
-let name = "George";
-console.log(name.charAt(2))
+let result = 1 % 4
+
+console.log(result)
